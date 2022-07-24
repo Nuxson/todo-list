@@ -1,0 +1,134 @@
+:root{
+    --accent: #009e9e;
+    --add: #00c803;
+    --delete: #e20000;
+    --default: rgba(0, 0, 0, 0.2);
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--accent);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+.todo {
+    padding: 32px;
+    background-color: rgb(255, 255, 255);
+    width: 95vw;
+    border-radius: 10px;
+    
+}
+.todo-content{
+
+}
+.todo-title{
+
+}
+.todo-new{
+    --size: 30px;
+    display: flex;
+    margin: 16px 0;
+
+}
+.todo-new input{
+    margin-right: 16px;
+    font-size: 16px;
+    font-weight: 300
+    padding 8px 16px;
+    height: var(--size);
+    border: 1px solid var(--default);
+    border-radius: 5px;
+    flex-grow: 1;
+
+}
+.todo-add{
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: calc(var(--size)*1);
+    font-size: 16px;
+    font-weight: 700;
+    background: var(--add);
+    color: white;
+}
+.todo-list > *:not(:last-child){
+    margin-bottom: 16px;
+
+}
+.todo-list{
+    margin-top: 16px;
+}
+.todo-task{
+    --size: 28px;
+    min-height: var(--size);
+    display: flex;
+    align-items: center; 
+    cursor:default;
+}
+.todo_task_complete .todo-task-text{
+    text-decoration: line-through;
+    color: var(--default);
+}
+.todo-task:hover .todo-task-del{
+    display: block ;
+}
+.todo-checkbox{
+    margin-right: 16px;
+}
+.todo-checkbox input{
+    display: none;
+}
+.todo-checkbox input:checked+div{
+    background-color: var(--accent)
+}
+.todo-checkbox input:checked+div::after{
+    display: block;
+}
+.todo-checkbox div{
+    --size: 23px;
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid var(--accent);
+    border-radius:8px;
+    position: relative;
+    cursor: pointer;
+    color:white;
+}
+.todo-checkbox div::after{
+    content:'\1F5F8';
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.todo-task-text{
+    font-size: 16px;
+}
+.todo-task-del{
+  
+    line-height: 160%;
+    margin-left: 16px;
+    font-size: 50px;
+    height: 24px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background: var(--delete);
+    color: white;
+}
